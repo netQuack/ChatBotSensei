@@ -92,6 +92,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -132,6 +134,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUpIn.resx">
       <DependentUpon>SignUpIn.h</DependentUpon>
     </EmbeddedResource>
