@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SignUp.h"
+#include "ChatSensei.h"
 
 namespace ChatBotSensei {
 
@@ -225,6 +226,7 @@ namespace ChatBotSensei {
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->Name = L"SignUpIn";
@@ -254,6 +256,10 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	String^ passWord = textBox2->Text;
 
 	//nOW WE will open the text files to check if the credentials matches or not
+
+	ChatSensei^ openForm = gcnew ChatSensei();
+
+	openForm->Show();
 
 
 	

@@ -21,6 +21,9 @@
     <ClCompile Include="SignUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ChatSensei.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SignUpIn.h">
@@ -29,5 +32,11 @@
     <ClInclude Include="SignUp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ChatSensei.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

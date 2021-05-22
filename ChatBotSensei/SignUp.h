@@ -176,6 +176,7 @@ namespace ChatBotSensei {
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
 			this->Margin = System::Windows::Forms::Padding(6, 8, 6, 8);
 			this->Name = L"SignUp";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
