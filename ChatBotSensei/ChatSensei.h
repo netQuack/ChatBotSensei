@@ -41,12 +41,14 @@ namespace ChatBotSensei {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ homeToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ contactUsToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ helpToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ aboutToolStripMenuItem;
+	private: System::Windows::Forms::Label^ TutorialDisplay;
+
 
 	private:
 		/// <summary>
@@ -59,6 +61,13 @@ namespace ChatBotSensei {
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
+		/// 
+		/// 
+		//String^ query = textBox1->Text;
+		//String^ lesson = textBox2->Text;
+		
+		
+		
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ChatSensei::typeid));
@@ -68,12 +77,12 @@ namespace ChatBotSensei {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->homeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->contactUsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->TutorialDisplay = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -83,15 +92,17 @@ namespace ChatBotSensei {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->label1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->label1->ForeColor = System::Drawing::Color::DarkOliveGreen;
 			this->label1->Location = System::Drawing::Point(12, 73);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(530, 41);
+			this->label1->Size = System::Drawing::Size(532, 43);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Write whhat you want to know about -";
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::Color::LightSkyBlue;
 			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->textBox1);
 			this->panel1->Location = System::Drawing::Point(12, 117);
@@ -101,15 +112,17 @@ namespace ChatBotSensei {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(423, 57);
+			this->button1->Location = System::Drawing::Point(424, 56);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(136, 53);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Send";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ChatSensei::button1_Click);
 			// 
 			// textBox1
 			// 
+			this->textBox1->BackColor = System::Drawing::Color::DarkGray;
 			this->textBox1->Location = System::Drawing::Point(3, 3);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(563, 47);
@@ -128,20 +141,12 @@ namespace ChatBotSensei {
 			// 
 			// panel2
 			// 
-			this->panel2->Controls->Add(this->textBox2);
+			this->panel2->BackColor = System::Drawing::Color::LightSkyBlue;
+			this->panel2->Controls->Add(this->TutorialDisplay);
 			this->panel2->Location = System::Drawing::Point(12, 277);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(563, 370);
 			this->panel2->TabIndex = 3;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(3, 0);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->ScrollBars = System::Windows::Forms::ScrollBars::Both;
-			this->textBox2->Size = System::Drawing::Size(557, 305);
-			this->textBox2->TabIndex = 0;
 			// 
 			// menuStrip1
 			// 
@@ -152,33 +157,42 @@ namespace ChatBotSensei {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(600, 28);
+			this->menuStrip1->Size = System::Drawing::Size(600, 30);
 			this->menuStrip1->TabIndex = 4;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// homeToolStripMenuItem
 			// 
 			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
-			this->homeToolStripMenuItem->Size = System::Drawing::Size(64, 24);
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(64, 26);
 			this->homeToolStripMenuItem->Text = L"Home";
 			// 
 			// contactUsToolStripMenuItem
 			// 
 			this->contactUsToolStripMenuItem->Name = L"contactUsToolStripMenuItem";
-			this->contactUsToolStripMenuItem->Size = System::Drawing::Size(94, 24);
+			this->contactUsToolStripMenuItem->Size = System::Drawing::Size(94, 26);
 			this->contactUsToolStripMenuItem->Text = L"Contact Us";
 			// 
 			// helpToolStripMenuItem
 			// 
 			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
-			this->helpToolStripMenuItem->Size = System::Drawing::Size(55, 24);
+			this->helpToolStripMenuItem->Size = System::Drawing::Size(55, 26);
 			this->helpToolStripMenuItem->Text = L"Help";
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(64, 24);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(64, 26);
 			this->aboutToolStripMenuItem->Text = L"About";
+			// 
+			// TutorialDisplay
+			// 
+			this->TutorialDisplay->BackColor = System::Drawing::Color::LightCyan;
+			this->TutorialDisplay->Location = System::Drawing::Point(0, 15);
+			this->TutorialDisplay->Name = L"TutorialDisplay";
+			this->TutorialDisplay->Size = System::Drawing::Size(560, 316);
+			this->TutorialDisplay->TabIndex = 0;
+			this->TutorialDisplay->Text = L"..........";
 			// 
 			// ChatSensei
 			// 
@@ -201,7 +215,6 @@ namespace ChatBotSensei {
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -209,5 +222,17 @@ namespace ChatBotSensei {
 
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		String^ query = textBox1->Text;
+
+		if (query =="teach"){
+		TutorialDisplay->Text = " Arrays are necessary..";
+		}
+		else {
+			TutorialDisplay->Text = " This is unknown to me";
+
+		}
+	}
+};
 }

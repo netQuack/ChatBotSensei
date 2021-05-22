@@ -63,6 +63,18 @@ namespace ChatBotSensei {
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		/// 
+		
+		
+
+
+		
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SignUp::typeid));
