@@ -45,6 +45,11 @@ namespace ChatBotSensei {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^ homeToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ contactUsToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ helpToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ aboutToolStripMenuItem;
 	protected:
 
 	private:
@@ -69,6 +74,12 @@ namespace ChatBotSensei {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->homeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->contactUsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -158,6 +169,43 @@ namespace ChatBotSensei {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &SignUp::button1_Click);
 			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->homeToolStripMenuItem,
+					this->contactUsToolStripMenuItem, this->helpToolStripMenuItem, this->aboutToolStripMenuItem
+			});
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(599, 28);
+			this->menuStrip1->TabIndex = 8;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// homeToolStripMenuItem
+			// 
+			this->homeToolStripMenuItem->Name = L"homeToolStripMenuItem";
+			this->homeToolStripMenuItem->Size = System::Drawing::Size(64, 24);
+			this->homeToolStripMenuItem->Text = L"Home";
+			// 
+			// contactUsToolStripMenuItem
+			// 
+			this->contactUsToolStripMenuItem->Name = L"contactUsToolStripMenuItem";
+			this->contactUsToolStripMenuItem->Size = System::Drawing::Size(94, 24);
+			this->contactUsToolStripMenuItem->Text = L"Contact Us";
+			// 
+			// helpToolStripMenuItem
+			// 
+			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
+			this->helpToolStripMenuItem->Size = System::Drawing::Size(55, 24);
+			this->helpToolStripMenuItem->Text = L"Help";
+			// 
+			// aboutToolStripMenuItem
+			// 
+			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(64, 24);
+			this->aboutToolStripMenuItem->Text = L"About";
+			// 
 			// SignUp
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(17, 41);
@@ -165,6 +213,7 @@ namespace ChatBotSensei {
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(599, 648);
+			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->panel2);
@@ -181,6 +230,8 @@ namespace ChatBotSensei {
 			this->Name = L"SignUp";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"SignUp";
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
